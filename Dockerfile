@@ -1,5 +1,5 @@
 # Use NodeJS base image
-FROM node:13
+FROM node:alpine3.10
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -12,7 +12,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copy app source
-COPY ./src .
+COPY . .
 
 # Bind the port that the image will run on
 EXPOSE 8081
