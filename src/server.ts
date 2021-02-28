@@ -10,13 +10,13 @@ import {V0_FEED_MODELS} from './controllers/v0/model.index';
 
 
 (async () => {
-  console.log(process.env.POSTGRES_USERNAME)
+  console.log(config)
   await sequelize.addModels(V0_FEED_MODELS);
   
   await sequelize.sync();
 
   const app = express();
-  const port = process.env.PORT || 8081;
+  const port = process.env.PORT || 8080;
 
   app.use(bodyParser.json());
 
